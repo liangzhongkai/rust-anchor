@@ -1,0 +1,31 @@
+.anchor
+.DS_Store
+target
+**/*.rs.bk
+node_modules
+test-ledger
+.yarn
+
+# IDE
+.idea/
+.vscode/
+.fleet/
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+
+# Cache
+.cache/
+.turbo/
+.parcel-cache/
+
+# Build artifacts
+dist/
+build/
+
+# OS
+Thumbs.db
