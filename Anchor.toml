@@ -6,7 +6,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-anchor_test = "84n3QwFJaRe197URt8cEVceALK55q6T21TZViCJ8PaJe"
+anchor_test = "3BxPymFpACUfcSpNrW813gy9EXQMZ99GA9sGCoehxZ8m"
 
 [registry]
 url = "https://api.apr.dev"
@@ -16,4 +16,9 @@ cluster = "localnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
-test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 \"tests/**/*.ts\""
+test = "bash scripts/test.sh"
+
+[test]
+startup_wait = 20000
+shutdown_wait = 2000
+upgradeable = false
