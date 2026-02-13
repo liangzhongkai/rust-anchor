@@ -12,5 +12,16 @@ describe("anchor-test", () => {
     // Add your test here.
     const tx = await program.methods.initialize().rpc();
     console.log("Your transaction signature", tx);
+
+    // Fetch and print transaction logs
+    const connection = program.provider.connection;
+    const confirmedTx = await connection.getTransaction(tx, {
+      commitment: "confirmed",
+      maxSupportedTransactionVersion: 0,
+    });
+    if (confirmedTx?.meta?.logMessages) {
+      console.log("Transaction logs:");
+      confirmedTx.meta.logMessages.forEach((log) => console.log(log));
+    }
   });
 });
